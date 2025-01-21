@@ -1,0 +1,389 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "成绩管理系统",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "tags": [],
+  "paths": {
+    "/localhost:8080/addStudent": {
+      "post": {
+        "summary": "添加学生信息",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "class": {
+                    "example": "23DX0214",
+                    "type": "string"
+                  },
+                  "number": {
+                    "example": "2023212069",
+                    "type": "string"
+                  },
+                  "name": {
+                    "example": "杨程博",
+                    "type": "string"
+                  },
+                  "sex": {
+                    "example": "男",
+                    "type": "string"
+                  },
+                  "age": {
+                    "example": "19",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/localhost:8080/student/getStudent": {
+      "get": {
+        "summary": "根据学号获取学生信息",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "number",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "2023212069",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/localhost:8080/student/addScore": {
+      "post": {
+        "summary": "添加学生成绩信息",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "计算机组成原理": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "计算机组成原理"
+                ]
+              },
+              "example": {
+                "计算机组成原理": 98
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/localhost:8080/student/deleteStudent": {
+      "delete": {
+        "summary": "根据学号删除学生信息",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "number",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "2023212069",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/localhost:8080/student/deleteScore": {
+      "delete": {
+        "summary": "删除学生成绩信息",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "number",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "2023212069",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/localhost:8080/student/updateStudent": {
+      "put": {
+        "summary": "修改学生信息",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "number",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "2023212069",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "sex": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name",
+                  "sex"
+                ]
+              },
+              "example": {
+                "name": "张三",
+                "sex": "女"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/localhost:8080/student/getScore": {
+      "get": {
+        "summary": "获取学生成绩",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "number",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "2023212069",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "lessonName",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "Chemistry",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/localhost:8080/csv/postFile": {
+      "post": {
+        "summary": "上传CSV文件",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "format": "binary",
+                    "type": "string",
+                    "example": "file://C:\\Users\\a\\Desktop\\students.csv"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/localhost:8080/csv/parseStudent": {
+      "post": {
+        "summary": "读取本地CSV文件",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    }
+  },
+  "components": {
+    "schemas": {},
+    "securitySchemes": {}
+  },
+  "servers": []
+}
